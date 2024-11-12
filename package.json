@@ -1,0 +1,45 @@
+{
+  "name": "@thebigrick/bulk-redirects",
+  "version": "1.0.3",
+  "description": "Bulk redirects for BigCommerce",
+  "author": "Riccardo Tempesta <riccardo.tempesta@bigcommerce.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "thebigrick-bulk-redirects": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thebigrick/bigcommerce-bulk-redirects"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "dev": "npx tsx src/index.ts",
+    "bundle": "tsup",
+    "upload": "npm run bundle && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21",
+    "ora": "^8.1.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "@types/commander": "^2.12.5",
+    "@types/lodash": "^4.17.13",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "tsup": "^8.3.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
