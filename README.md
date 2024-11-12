@@ -4,7 +4,8 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Getting started](#getting-started)
+    - [Installing npx](#installing-npx)
 - [Usage](#usage)
     - [Options](#options)
     - [Examples](#examples)
@@ -30,12 +31,20 @@ multi-storefront configurations, making it versatile for businesses with multipl
 - **Multi-Storefront Support**: Manage redirects across multiple storefronts seamlessly.
 - **Flexible Output**: Choose between generating a CSV file or loading redirects via API.
 
-## Getting strted
+## Getting started
 
 You can run the script directly using `npx` without installing it globally:
 
 ```bash
 npx @thebigrick/bulk-redirects
+```
+
+### Installing npx
+
+If you don't have `npx` installed, you can install it globally using npm:
+
+```bash
+npm install -g npx
 ```
 
 ## Usage
