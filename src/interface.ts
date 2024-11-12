@@ -19,7 +19,6 @@ export interface RedirectData {
     productId: number;
     domain: string;
     oldPath: string;
-    newPath: string;
 }
 
 export interface ChannelData {

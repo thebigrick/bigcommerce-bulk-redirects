@@ -1,6 +1,5 @@
 import readCsv from './get-csv-data';
 import splitIntoBatches from './split-into-batches';
-import getUrlsBySkus from './get-urls-by-skus';
 import getRedirects from './get-redirects';
 import dumpCsv from './dump-csv';
 import fs from 'node:fs';
@@ -26,10 +25,9 @@ const csvBatches: string[] = [
     for (const batch of batches) {
         spinner.text = 'Fetching URLs by SKUs';
         const skus = batch.map(({ sku }) => sku);
-        const urls = await getUrlsBySkus(skus, commandOptions);
 
         spinner.text = 'Getting redirects';
-        const redirects = await getRedirects(batch, urls, commandOptions);
+        const redirects = await getRedirects(batch, commandOptions);
 
         if (commandOptions.loadViaApi) {
             spinner.text = 'Loading redirects via API';

@@ -21,7 +21,6 @@ const loadRedirects = async (
         to: {
             type: 'product',
             entity_id: redirect.productId,
-            url: redirect.newPath,
         },
     }));
 
