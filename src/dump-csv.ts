@@ -16,17 +16,15 @@ const dumpCsv = (redirects: RedirectData[]): string => {
         ],
     });
 
-    const data = redirects.map(
-        ({ oldPath, newPath, productId, domain, siteId }) => {
-            return {
-                domain,
-                oldPath,
-                newPath,
-                type: 'product',
-                productId,
-            };
-        }
-    );
+    const data = redirects.map(({ oldPath, productId, domain }) => {
+        return {
+            domain,
+            oldPath,
+            newPath: '',
+            type: 'product',
+            productId,
+        };
+    });
 
     return csvStringifier.stringifyRecords(data);
 };

@@ -1,6 +1,6 @@
 {
   "name": "@thebigrick/bulk-redirects",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Bulk redirects for BigCommerce",
   "author": "Riccardo Tempesta <riccardo.tempesta@bigcommerce.com>",
   "license": "MIT",

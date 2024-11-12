@@ -3,7 +3,6 @@ export interface CommandOptions {
     batchSize: number;
     accessToken: string;
     storeHash: string;
-    localeCode: string;
     loadViaApi: boolean;
     sourceFile: string;
     destinationFile: string;

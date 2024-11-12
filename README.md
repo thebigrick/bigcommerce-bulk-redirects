@@ -57,10 +57,9 @@ Options
 - `-s`, `--source <file>`: (Optional) Specify the input CSV source file. Default: redirects.csv.
 - `-o`, `--output <file>`: (Optional) Specify the output CSV file. Default: output.csv.
 - `-b`, `--batch <batchSize>`: (Optional) Set the batch size for processing. Default: 50.
-- `-c`, `--channel <channel>`: (**Required**) BigCommerce channel_id.
+- `-c`, `--channel <channel>`: (Optional) BigCommerce channel id. Default: 1.
 - `-t`, `--token <token>`: (Optional) BigCommerce access token. Can be set via the ACCESS_TOKEN environment variable.
 - `-h`, `--hash <hash>`: (Optional) BigCommerce store hash. Can be set via the STORE_HASH environment variable.
-- `-l`, `--locale <locale>`: (**Required**) BigCommerce locale (e.g., "en").
 
 ### Examples
 
@@ -69,7 +68,7 @@ Options
 Generate a CSV file for redirects without uploading them to BigCommerce:
 
 ```bash
-npx @thebigrick/bulk-redirects --source my_redirects.csv --output redirects_output.csv --channel 123 --locale en --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
+npx @thebigrick/bulk-redirects --source my_redirects.csv --output redirects_output.csv --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
 ```
 
 #### Example 2: Load Redirects via API
@@ -77,7 +76,7 @@ npx @thebigrick/bulk-redirects --source my_redirects.csv --output redirects_outp
 Load redirects directly into BigCommerce using API credentials:
 
 ```bash
-npx @thebigrick/bulk-redirects --load --source my_redirects.csv --channel 123 --locale en --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
+npx @thebigrick/bulk-redirects --load --source my_redirects.csv --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
 ```
 
 #### Example 3: Using Environment Variables
@@ -92,7 +91,7 @@ STORE_HASH=YOUR_STORE_HASH
 Run the script without specifying --token and --hash:
 
 ```bash
-npx @thebigrick/bulk-redirects --load --source my_redirects.csv --channel 123 --locale en
+npx @thebigrick/bulk-redirects --load --source my_redirects.csv
 ```
 
 ## Environment Variables
@@ -105,11 +104,10 @@ environment:
 
 ## Multi-Storefront Support
 
-Specify the channel_id using the --channel option and the locale using the --locale option to manage redirects for
-different storefronts:
+Specify the channel id using the --channel option to manage redirects for different storefronts:
 
 ```bash
-npx @thebigrick/bulk-redirects --source my_redirects.csv --output redirects_output.csv --channel 123 --locale en --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
+npx @thebigrick/bulk-redirects --source my_redirects.csv --output redirects_output.csv --channel 123 --token YOUR_ACCESS_TOKEN --hash YOUR_STORE_HASH
 ```
 
 ## Input CSV File Format

@@ -26,11 +26,7 @@ const getCommandOptions = (): CommandOptions => {
             'output.csv'
         )
         .option('-b, --batch <batchSize>', 'Batch size', '50')
-        .requiredOption(
-            '-c, --channel <channel>',
-            'BigCommerce channel_id',
-            undefined
-        )
+        .option('-c, --channel <channel>', 'BigCommerce channel id', '1')
         .option(
             '-t, --token <token>',
             'BigCommerce access token',
@@ -40,11 +36,6 @@ const getCommandOptions = (): CommandOptions => {
             '-h, --hash <hash>',
             'BigCommerce store hash',
             process.env.STORE_HASH
-        )
-        .requiredOption(
-            '-l, --locale <locale>',
-            'BigCommerce locale',
-            undefined
         );
 
     program.parse();
@@ -63,7 +54,6 @@ const getCommandOptions = (): CommandOptions => {
         channelId: options.channel,
         accessToken: options.token,
         storeHash: options.hash,
-        localeCode: options.locale,
         batchSize: parseInt(options.batch),
         loadViaApi: options.load,
         sourceFile: options.source,
