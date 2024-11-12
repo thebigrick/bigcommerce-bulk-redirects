@@ -43,7 +43,7 @@ const getCommandOptions = (): CommandOptions => {
     const options = program.opts();
     if (!options.token || !options.hash) {
         console.error(
-            chalk.bgRed(
+            chalk.bgRed.white(
                 'Missing access token or store hash. You can provide them via --token and --hash options or ACCESS_TOKEN and STORE_HASH environment variables.'
             )
         );

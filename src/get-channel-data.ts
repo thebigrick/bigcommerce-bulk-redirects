@@ -49,7 +49,9 @@ const getChannelData = async (
         const data = await response.json();
         if (!data || !data.data) {
             console.error(
-                chalk.bgRed('An error occurred while fetching the channel data')
+                chalk.bgRed.white(
+                    'An error occurred while fetching the channel data'
+                )
             );
             process.exit(-1);
         }
@@ -59,7 +61,7 @@ const getChannelData = async (
         );
         if (!channel) {
             console.error(
-                chalk.bgRed(
+                chalk.bgRed.white(
                     'Channel not found. Please provide a valid channel ID'
                 )
             );

@@ -38,7 +38,7 @@ const loadRedirects = async (
 
     if (response.status !== 200) {
         console.error(
-            chalk.bgRed(
+            chalk.bgRed.white(
                 `Failed to load redirects: ${JSON.stringify(responseData)}`
             )
         );
